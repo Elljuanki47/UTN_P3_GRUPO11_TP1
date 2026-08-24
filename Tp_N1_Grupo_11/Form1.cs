@@ -49,5 +49,19 @@ namespace Tp_N1_Grupo_11
         {
 
         }
+
+        private void btnEjercicio2_Click(object sender, EventArgs e)
+        {
+            Ejercicio2 ejercicio2 = new Ejercicio2(this);
+            ejercicio2.Show();
+            this.Hide();
+        }
+
+        private void btnEjercicio3_Click(object sender, EventArgs e)
+        {
+            Ejercicio3 ejercicio3 = new Ejercicio3(this);
+            ejercicio3.Show();
+            this.Hide();
+        }
     }
 }
