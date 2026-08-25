@@ -76,7 +76,6 @@
             this.Box1.Name = "Box1";
             this.Box1.Size = new System.Drawing.Size(208, 277);
             this.Box1.TabIndex = 3;
-            this.Box1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // btnMoverUno
             // 
@@ -97,7 +96,6 @@
             this.lstSeleccionados.Name = "lstSeleccionados";
             this.lstSeleccionados.Size = new System.Drawing.Size(208, 277);
             this.lstSeleccionados.TabIndex = 5;
-            this.lstSeleccionados.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged_1);
             // 
             // btnMoverTodos
             // 
@@ -127,7 +125,6 @@
             this.Name = "Ejercicio1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ejercicio 1";
-            this.Load += new System.EventHandler(this.Ejercicio1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

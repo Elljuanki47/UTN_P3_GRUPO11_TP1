@@ -59,10 +59,6 @@ namespace Tp_N1_Grupo_11
             ValidarAceptar();
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
@@ -70,10 +66,6 @@ namespace Tp_N1_Grupo_11
             txtNombre.Clear();
         }
 
-        private void Ejercicio1_Load(object sender, EventArgs e)
-        {
-
-        }
         private void btnMoverUno_Click(object sender, EventArgs e)
         {
             if (Box1.SelectedItem == null)
@@ -105,11 +97,6 @@ namespace Tp_N1_Grupo_11
                 lstSeleccionados.Items.Add(Box1.Items[0]);
                 Box1.Items.RemoveAt(0);
             }
-        }
-
-        private void listBox1_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-
         }
 
         
