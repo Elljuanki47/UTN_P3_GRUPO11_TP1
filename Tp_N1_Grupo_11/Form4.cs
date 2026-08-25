@@ -23,6 +23,12 @@ namespace Tp_N1_Grupo_11
         {
             formPrincipal.Show();
         }
+
+        private void Ejercicio3_Load(object sender, EventArgs e)
+        {
+            rbFemenino.Checked = true;
+            rbCasado.Checked = true;
+        }
     }
 }
 
