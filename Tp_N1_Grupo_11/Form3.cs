@@ -17,6 +17,7 @@ namespace Tp_N1_Grupo_11
         {
             InitializeComponent();
             this.formPrincipal = formPrincipal;
+            ValidarAceptar();
         }
 
         private void Ejercicio2_FormClosed(object sender, FormClosedEventArgs e)
@@ -26,7 +27,10 @@ namespace Tp_N1_Grupo_11
 
         private void ValidarAceptar()
         {
-            bool tieneTexto = !string.IsNullOrWhiteSpace(txtNombre.Text);
+            bool tieneNombre = !string.IsNullOrWhiteSpace(txtNombre.Text);
+            bool tieneApellido = !string.IsNullOrWhiteSpace(txtApellido.Text);
+
+            btnAgregar.Enabled = tieneNombre && tieneApellido;
         }
 
 
@@ -39,6 +43,45 @@ namespace Tp_N1_Grupo_11
                 tb.BackColor = Color.Red;
             }
             //FALTA LA VALIDACION DE SI EXISTE EN LA LISTBOX
+            else if (tb.Text.Length >= 50)
+            {
+                MessageBox.Show("Llegaste al limite maximo de 50 caracteres.");
+            }
+            else
+            {
+                tb.BackColor = System.Drawing.SystemColors.Window;
+            }
+            ValidarAceptar();
+            
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            LstElementos.Items.Add(txtNombre.Text.Trim() + " " + txtApellido.Text.Trim());
+            txtNombre.Text = "";
+            txtApellido.Text = "";
+        }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            if (LstElementos.SelectedIndex != -1)
+            {
+                LstElementos.Items.RemoveAt(LstElementos.SelectedIndex);
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un item para borrar" , "Atencion");
+            }
+        }
+
+        private void txtApellido_TextChanged(object sender, EventArgs e)
+        {
+            System.Windows.Forms.TextBox tb = (System.Windows.Forms.TextBox)sender;
+
+            if (tb.Text.Length == 0)
+            {
+                tb.BackColor = Color.Red;
+            }
             else if (tb.Text.Length >= 50)
             {
                 MessageBox.Show("Llegaste al limite maximo de 50 caracteres.");
