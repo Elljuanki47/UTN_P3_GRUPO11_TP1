@@ -21,6 +21,12 @@ namespace Tp_N1_Grupo_11
         private void btnEjercicio1_Click(object sender, EventArgs e)
         {
             Ejercicio1 ejercicio1 = new Ejercicio1();
+
+            ejercicio1.FormClosed += (senderForm, eForm) =>
+            {
+                this.Show();
+            };
+
             ejercicio1.Show();
             this.Hide();
         }

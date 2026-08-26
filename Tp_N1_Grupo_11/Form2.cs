@@ -40,22 +40,20 @@ namespace Tp_N1_Grupo_11
         private void txtNombre_TextChanged(object sender, EventArgs e)
         {
             System.Windows.Forms.TextBox tb = (System.Windows.Forms.TextBox)sender;
-            if (tb.Text.Length == 0)
+
+            if (string.IsNullOrWhiteSpace(tb.Text))
             {
-                tb.BackColor = Color.Red;
+                tb.BackColor = SystemColors.Window;
             }
             else if (ExisteNombre(tb.Text))
             {
-                tb.BackColor = Color.Red;
-            }
-            else if (tb.Text.Length == 50)
-            {
-                MessageBox.Show("Llegaste al límite máximo de 50 caracteres.");
+                tb.BackColor = Color.LightCoral;
             }
             else
             {
-                tb.BackColor = System.Drawing.SystemColors.Window;
+                tb.BackColor = SystemColors.Window;
             }
+
             ValidarAceptar();
         }
 
