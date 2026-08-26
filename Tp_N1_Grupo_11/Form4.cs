@@ -49,7 +49,39 @@ namespace Tp_N1_Grupo_11
         }
         private void btnMostrar_Click(object sender, EventArgs e)
         {
+            string sexo;
+            string estadoCivil;
+            string resultado;
 
+            if (rbFemenino.Checked)
+            {
+                sexo = rbFemenino.Text;
+            }
+            else
+            {
+                sexo = rbMasculino.Text;
+            }
+
+            if (rbCasado.Checked)
+            {
+                estadoCivil = rbCasado.Text;
+            }
+            else
+            {
+                estadoCivil = rbSoltero.Text;
+            }
+
+            resultado = "Usted selecciono los siguientes elementos; \n";
+            resultado += "Sexo: " + sexo + "\n";
+            resultado += "Estado civil: " + estadoCivil + "\n";
+            resultado += "Oficio:";
+
+            foreach (var oficio in clbOficio.CheckedItems)
+            {
+                resultado += "\n - " + oficio.ToString();
+            }
+
+            lblResultado.Text = resultado;
         }
 
         

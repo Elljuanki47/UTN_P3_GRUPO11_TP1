@@ -36,6 +36,7 @@
             this.rbFemenino = new System.Windows.Forms.RadioButton();
             this.clbOficio = new System.Windows.Forms.CheckedListBox();
             this.btnMostrar = new System.Windows.Forms.Button();
+            this.lblResultado = new System.Windows.Forms.Label();
             this.Estado.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -44,7 +45,7 @@
             // 
             this.Estado.Controls.Add(this.rbSoltero);
             this.Estado.Controls.Add(this.rbCasado);
-            this.Estado.Location = new System.Drawing.Point(345, 44);
+            this.Estado.Location = new System.Drawing.Point(347, 12);
             this.Estado.Name = "Estado";
             this.Estado.Size = new System.Drawing.Size(121, 74);
             this.Estado.TabIndex = 2;
@@ -77,7 +78,7 @@
             // 
             this.groupBox1.Controls.Add(this.rbMasculino);
             this.groupBox1.Controls.Add(this.rbFemenino);
-            this.groupBox1.Location = new System.Drawing.Point(46, 44);
+            this.groupBox1.Location = new System.Drawing.Point(48, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(121, 74);
             this.groupBox1.TabIndex = 3;
@@ -117,7 +118,7 @@
             "Programador",
             "Reparador de PC",
             "Tester"});
-            this.clbOficio.Location = new System.Drawing.Point(164, 124);
+            this.clbOficio.Location = new System.Drawing.Point(166, 92);
             this.clbOficio.Name = "clbOficio";
             this.clbOficio.Size = new System.Drawing.Size(181, 109);
             this.clbOficio.TabIndex = 4;
@@ -125,7 +126,7 @@
             // 
             // btnMostrar
             // 
-            this.btnMostrar.Location = new System.Drawing.Point(164, 252);
+            this.btnMostrar.Location = new System.Drawing.Point(166, 220);
             this.btnMostrar.Name = "btnMostrar";
             this.btnMostrar.Size = new System.Drawing.Size(181, 23);
             this.btnMostrar.TabIndex = 5;
@@ -133,11 +134,20 @@
             this.btnMostrar.UseVisualStyleBackColor = true;
             this.btnMostrar.Click += new System.EventHandler(this.btnMostrar_Click);
             // 
+            // lblResultado
+            // 
+            this.lblResultado.AutoSize = true;
+            this.lblResultado.Location = new System.Drawing.Point(122, 263);
+            this.lblResultado.Name = "lblResultado";
+            this.lblResultado.Size = new System.Drawing.Size(0, 13);
+            this.lblResultado.TabIndex = 6;
+            // 
             // Ejercicio3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(526, 401);
+            this.Controls.Add(this.lblResultado);
             this.Controls.Add(this.btnMostrar);
             this.Controls.Add(this.clbOficio);
             this.Controls.Add(this.groupBox1);
@@ -151,6 +161,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -164,5 +175,6 @@
         private System.Windows.Forms.RadioButton rbFemenino;
         private System.Windows.Forms.CheckedListBox clbOficio;
         private System.Windows.Forms.Button btnMostrar;
+        private System.Windows.Forms.Label lblResultado;
     }
 }
