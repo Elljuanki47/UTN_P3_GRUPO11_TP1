@@ -30,6 +30,8 @@ namespace Tp_N1_Grupo_11
             bool tieneNombre = !string.IsNullOrWhiteSpace(txtNombre.Text);
             bool tieneApellido = !string.IsNullOrWhiteSpace(txtApellido.Text);
 
+            //Agregar aca la verificacion con un string persona junto a un booleano persona repetida para verificar que exista o no la persona
+
             btnAgregar.Enabled = tieneNombre && tieneApellido;
         }
 
@@ -91,6 +93,19 @@ namespace Tp_N1_Grupo_11
                 tb.BackColor = System.Drawing.SystemColors.Window;
             }
             ValidarAceptar();
+        }
+
+        private bool ExistePersona(string persona)
+        {
+            foreach (var item in LstElementos.Items)
+            {
+                if (item.ToString().Equals(persona, StringComparison.OrdinalIgnoreCase))
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
 }
