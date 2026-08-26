@@ -17,6 +17,7 @@ namespace Tp_N1_Grupo_11
         {
             InitializeComponent();
             this.formPrincipal = formPrincipal;
+            Habilitacion();
         }
 
         private void Ejercicio2_FormClosed(object sender, FormClosedEventArgs e)
@@ -29,6 +30,29 @@ namespace Tp_N1_Grupo_11
             rbFemenino.Checked = true;
             rbCasado.Checked = true;
         }
+
+        private void Habilitacion()
+        {
+            if (clbOficio.CheckedItems.Count > 0)
+            {
+                btnMostrar.Enabled = true;
+            }
+            else
+            {
+                btnMostrar.Enabled = false;
+            }
+        }
+
+        private void clbOficio_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Habilitacion();
+        }
+        private void btnMostrar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }
 

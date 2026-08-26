@@ -34,6 +34,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rbMasculino = new System.Windows.Forms.RadioButton();
             this.rbFemenino = new System.Windows.Forms.RadioButton();
+            this.clbOficio = new System.Windows.Forms.CheckedListBox();
+            this.btnMostrar = new System.Windows.Forms.Button();
             this.Estado.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -105,11 +107,39 @@
             this.rbFemenino.Text = "Femenino";
             this.rbFemenino.UseVisualStyleBackColor = true;
             // 
+            // clbOficio
+            // 
+            this.clbOficio.CheckOnClick = true;
+            this.clbOficio.FormattingEnabled = true;
+            this.clbOficio.Items.AddRange(new object[] {
+            "Data Entry",
+            "Operador de PC",
+            "Programador",
+            "Reparador de PC",
+            "Tester"});
+            this.clbOficio.Location = new System.Drawing.Point(164, 124);
+            this.clbOficio.Name = "clbOficio";
+            this.clbOficio.Size = new System.Drawing.Size(181, 109);
+            this.clbOficio.TabIndex = 4;
+            this.clbOficio.SelectedIndexChanged += new System.EventHandler(this.clbOficio_SelectedIndexChanged);
+            // 
+            // btnMostrar
+            // 
+            this.btnMostrar.Location = new System.Drawing.Point(164, 252);
+            this.btnMostrar.Name = "btnMostrar";
+            this.btnMostrar.Size = new System.Drawing.Size(181, 23);
+            this.btnMostrar.TabIndex = 5;
+            this.btnMostrar.Text = "Mostrar lo que se selecciono";
+            this.btnMostrar.UseVisualStyleBackColor = true;
+            this.btnMostrar.Click += new System.EventHandler(this.btnMostrar_Click);
+            // 
             // Ejercicio3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(526, 401);
+            this.Controls.Add(this.btnMostrar);
+            this.Controls.Add(this.clbOficio);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.Estado);
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -132,5 +162,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rbMasculino;
         private System.Windows.Forms.RadioButton rbFemenino;
+        private System.Windows.Forms.CheckedListBox clbOficio;
+        private System.Windows.Forms.Button btnMostrar;
     }
 }
