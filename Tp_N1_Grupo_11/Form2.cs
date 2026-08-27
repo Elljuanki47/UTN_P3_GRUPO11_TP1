@@ -49,6 +49,10 @@ namespace Tp_N1_Grupo_11
             {
                 tb.BackColor = Color.LightCoral;
             }
+            else if (tb.Text.Length == 50)
+            {
+                MessageBox.Show("Llegaste al límite máximo de 50 caracteres.");
+            }
             else
             {
                 tb.BackColor = SystemColors.Window;
@@ -89,11 +93,15 @@ namespace Tp_N1_Grupo_11
                 MessageBox.Show("No hay nombres para mover.");
                 return;
             }
+            DialogResult respuesta = MessageBox.Show("¿Estás seguro de mover todos los nombres?", "Confirmar Acción", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            while (Box1.Items.Count > 0)
+            if (respuesta == DialogResult.Yes)
             {
-                lstSeleccionados.Items.Add(Box1.Items[0]);
-                Box1.Items.RemoveAt(0);
+                while (Box1.Items.Count > 0)
+                {
+                    lstSeleccionados.Items.Add(Box1.Items[0]);
+                    Box1.Items.RemoveAt(0);
+                }
             }
         }
 
