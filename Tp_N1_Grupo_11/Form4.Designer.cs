@@ -37,6 +37,7 @@
             this.clbOficio = new System.Windows.Forms.CheckedListBox();
             this.btnMostrar = new System.Windows.Forms.Button();
             this.lblResultado = new System.Windows.Forms.Label();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             this.Estado.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -137,16 +138,27 @@
             // lblResultado
             // 
             this.lblResultado.AutoSize = true;
-            this.lblResultado.Location = new System.Drawing.Point(122, 263);
+            this.lblResultado.Location = new System.Drawing.Point(122, 250);
             this.lblResultado.Name = "lblResultado";
             this.lblResultado.Size = new System.Drawing.Size(0, 13);
             this.lblResultado.TabIndex = 6;
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Location = new System.Drawing.Point(414, 117);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(81, 53);
+            this.btnLimpiar.TabIndex = 7;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // Ejercicio3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(526, 401);
+            this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.lblResultado);
             this.Controls.Add(this.btnMostrar);
             this.Controls.Add(this.clbOficio);
@@ -154,7 +166,8 @@
             this.Controls.Add(this.Estado);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Ejercicio3";
-            this.Text = "Form4";
+            this.Text = "Ejercicio 3";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Ejercicio3_FormClosed);
             this.Load += new System.EventHandler(this.Ejercicio3_Load);
             this.Estado.ResumeLayout(false);
             this.Estado.PerformLayout();
@@ -176,5 +189,6 @@
         private System.Windows.Forms.CheckedListBox clbOficio;
         private System.Windows.Forms.Button btnMostrar;
         private System.Windows.Forms.Label lblResultado;
+        private System.Windows.Forms.Button btnLimpiar;
     }
 }
