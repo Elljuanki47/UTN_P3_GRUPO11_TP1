@@ -33,7 +33,7 @@ namespace Tp_N1_Grupo_11
         private void ValidarAceptar()
         {
             bool tieneNombre = !string.IsNullOrWhiteSpace(txtNombre.Text);
-            bool mismonombre = ExisteNombre(txtNombre.Text);
+            bool mismonombre = ExisteNombre(txtNombre.Text.Trim());
             btnAceptar.Enabled = tieneNombre && !mismonombre;
         }
 
@@ -64,7 +64,7 @@ namespace Tp_N1_Grupo_11
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            Box1.Items.Add(txtNombre.Text);
+            Box1.Items.Add(txtNombre.Text.Trim());
             txtNombre.Clear();
         }
 
