@@ -30,9 +30,10 @@ namespace Tp_N1_Grupo_11
             bool tieneNombre = !string.IsNullOrWhiteSpace(txtNombre.Text);
             bool tieneApellido = !string.IsNullOrWhiteSpace(txtApellido.Text);
 
-            //Agregar aca la verificacion con un string persona junto a un booleano persona repetida para verificar que exista o no la persona
+            string persona = txtNombre.Text.Trim() + " " + txtApellido.Text.Trim();
+            bool personaRepetida = ExistePersona(persona);
 
-            btnAgregar.Enabled = tieneNombre && tieneApellido;
+            btnAgregar.Enabled = tieneNombre && tieneApellido && !personaRepetida;
         }
 
 
@@ -42,10 +43,13 @@ namespace Tp_N1_Grupo_11
 
             if (tb.Text.Length == 0)
             {
-                tb.BackColor = Color.Red;
+                tb.BackColor = System.Drawing.SystemColors.Window;
             }
-            //FALTA LA VALIDACION DE SI EXISTE EN LA LISTBOX
-            else if (tb.Text.Length >= 50)
+            else if (ExistePersona(txtNombre.Text.Trim() + " " + txtApellido.Text.Trim()))
+            {
+                tb.BackColor = Color.LightCoral;
+            }
+            else if (tb.Text.Length >= 25)
             {
                 MessageBox.Show("Llegaste al limite maximo de 50 caracteres.");
             }
@@ -82,9 +86,13 @@ namespace Tp_N1_Grupo_11
 
             if (tb.Text.Length == 0)
             {
-                tb.BackColor = Color.Red;
+                tb.BackColor = System.Drawing.SystemColors.Window;
             }
-            else if (tb.Text.Length >= 50)
+            else if (ExistePersona(txtNombre.Text.Trim() + " " + txtApellido.Text.Trim()))
+            {
+                tb.BackColor = Color.LightCoral;
+            }
+            else if (tb.Text.Length >= 25)
             {
                 MessageBox.Show("Llegaste al limite maximo de 50 caracteres.");
             }
